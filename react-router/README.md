@@ -24,8 +24,10 @@
 - Créer un composant navbar pour naviguer enter les chemins.
 - Dans le navbar ajouter des liens contenu dans des <Link>
 - Example:
-` <nav>
+
+```<nav>
 <Link to="/">Home</Link>
 <Link to="/produits">Produits</Link>
 <Link to="/login">Login</Link>
-  </nav>`
+  </nav>
+```
