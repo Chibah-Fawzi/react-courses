@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import "./App.css";
 import { useState } from "react";
+import { Route, Switch } from "react-router-dom";
+import Login from "./components/Login";
+import Home from "./components/Home";
+import Produits from "./components/Produits";
+import Navbar from "./components/Navbar";
 
 function App() {
   //  On déclare le state du username et de l'erreur
@@ -52,47 +57,23 @@ function App() {
     <h1>LOADING ...</h1>
   ) : (
     <>
-      <form>
-        <label>username</label>
-        <input
-          // On récupére ce que l'utilisateur écris dans l'input, et on la store dans la state "username"
-          onChange={(event) => setUsername(event.target.value)}
-          type="text"
-          id="username"
+      <Navbar />
+
+      <Switch>
+        <Route path="/login" component={Login} />
+        <Route path="/produits" component={Produits} />
+        <Route
+          path="/"
+          render={(props) => (
+            <Home
+              {...props}
+              setUsername={setUsername}
+              data={data}
+              error={error}
+            />
+          )}
         />
-
-        {/* Condition ternaire : 
-        Si la state "error" est true ? 
-        Affiche le paragraphe d'erreur : 
-        Sinon affiche le paragraphe du succés  
-        */}
-
-        {error ? (
-          <p style={{ color: "red" }}>
-            Le username doit être minmum 10 caractére
-          </p>
-        ) : (
-          <p style={{ color: "green" }}>Le username est correcte</p>
-        )}
-      </form>
-
-      <section>
-        {/* 9. On affiche la liste données "data" avec la function JS par défaut map, qui pour chaque élement de la liste crée une div qui contient : 
-        - le titre 
-        - l'id du post 
-        - l'id du user 
-        - le contenu du post */}
-
-        {data.map((element, index) => (
-          <div key={index} className="card">
-            <h1>
-              {element.id} - {element.title}
-            </h1>
-            <h3>{element.userId}</h3>
-            <p>{element.body}</p>
-          </div>
-        ))}
-      </section>
+      </Switch>
     </>
   );
 }
