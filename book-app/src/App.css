@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -33,10 +36,47 @@
   }
 }
 
-.card {
-  padding: 2em;
+#search {
+  width: 60vw;
+  height: 50px;
+  font-size: 20px;
+  padding: 10px 20px;
 }
 
-.read-the-docs {
-  color: #888;
+#search-button {
+  height: 50px;
+  font-size: 20px;
+  margin-left: 20px;
+  padding: 10px 20px;
+
+}
+
+.books {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10vh;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 15px;
+  color: red;
+}
+
+.book {
+  width: 20vw;
+  border: 1px solid white;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.year-pages {
+  display: flex;
+  justify-content: space-around;
 }
