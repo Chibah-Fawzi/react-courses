@@ -21,7 +21,8 @@ function Search(word) {
       produit.description.toLowerCase().includes(word.toLowerCase())
   );
 
-  console.log(filteredProduits);
+  // On efface le contenu avant d'afficher les produits filtrés
+  produitsDiv.innerHTML = "";
 
   // Pour chaque élement de la liste, affiche ses produits
   for (let i = 0; i < filteredProduits.length; i++) {
@@ -30,7 +31,7 @@ function Search(word) {
   <h2>${filteredProduits[i].title}</h2>
   <h6>${filteredProduits[i].prix}</h6>
   <p>${filteredProduits[i].description}</p>
-</div>
-`;
+  </div>
+  `;
   }
 }
