@@ -10,12 +10,6 @@ export default function Products() {
   const price = searchParams.get("price");
   const image = searchParams.get("image");
 
-  const product = {
-    title,
-    image,
-    price,
-  };
-
   function sendEmail(event) {
     event.preventDefault();
 
