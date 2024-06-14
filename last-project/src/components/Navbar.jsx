@@ -1,13 +1,16 @@
 import { FaSearch, FaShopify, FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 export default function Navbar() {
   return (
     <nav className="w-full flex justify-between items-center px-16 py-4 bg-white font-main">
-      <img
-        src="https://millicanpecan.com/cdn/shop/files/Millican_Pecan_Logo_-_Website_Header_360x.png?v=1613525361"
-        width={"230px"}
-        alt="logo-website"
-      />
+      <Link to="/">
+        <img
+          src="https://millicanpecan.com/cdn/shop/files/Millican_Pecan_Logo_-_Website_Header_360x.png?v=1613525361"
+          width={"230px"}
+          alt="logo-website"
+        />
+      </Link>
 
       <div className="text-lg">
         <a

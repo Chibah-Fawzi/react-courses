@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Products({ products }) {
   return (
@@ -12,15 +13,17 @@ export default function Products({ products }) {
       <h2 className="text-3xl font-bold uppercase">Product lists</h2>
       <div className="grid grid-cols-3 gap-y-10 mt-10">
         {products.map((produit) => (
-          <div className="flex flex-col items-center hover:underline">
-            <img
-              className="hover:opacity-70 cursor-pointer transition-all"
-              src={produit.image}
-              alt=""
-            />
-            <h2 className="text-xl">{produit.title}</h2>
-            <h4 className="text-lg font-bold">{produit.price}</h4>
-          </div>
+          <Link to={`/produits/${produit._id}`}>
+            <div className="flex flex-col items-center hover:underline">
+              <img
+                className="hover:opacity-70 cursor-pointer transition-all"
+                src={produit.image}
+                alt=""
+              />
+              <h2 className="text-xl">{produit.title}</h2>
+              <h4 className="text-lg font-bold">{produit.price}</h4>
+            </div>
+          </Link>
         ))}
       </div>
     </section>
